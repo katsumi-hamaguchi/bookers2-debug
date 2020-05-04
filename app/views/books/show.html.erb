@@ -73,13 +73,13 @@
 
               comment:<%= book_comment.comment %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-            　
+            　<% unless current_user != book_comment.user %>
               <%= link_to "削除",  book_book_comment_path(@book.id,book_comment.id), method: :delete %>
-              
-            <br>
+               
+            
 
-
-
+               <% end %>
+             <br>
             <% end %>
 
 				  		
