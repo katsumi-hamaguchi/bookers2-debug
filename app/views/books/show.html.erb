@@ -42,6 +42,17 @@
 			  <%= f.text_area :comment %>
 			  <%= f.submit "送信" %>
 			<% end %>
+            
+            <% @book.book_comments.each do |book_comment| %>
+            <%= book_comment.user.name %>
+
+            <%= book_comment.created_at.strftime('%Y/%m/%d') %>
+
+            <%= book_comment.comment %><br>
+
+
+            <% end %>
+
 				  		
 
 
