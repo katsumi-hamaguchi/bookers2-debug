@@ -10,5 +10,8 @@ Rails.application.routes.draw do
 
   root 'home#top'
   get 'home/about' => 'home#about'
+  get 'users/follows/:id' => 'users#following',as:"follows_show"
+  get 'users/followers/:id' => 'users#followers',as:"followers_show"
+
 
 end

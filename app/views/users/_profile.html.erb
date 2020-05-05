@@ -12,12 +12,13 @@
 		</tr>
 		<tr>
 			<th>follows</th>
-        	<th><%= user.followings.count %>人</th>
+        	<th><%= link_to follows_show_path(user.id) do %><%= user.followings.count %>人<% end %></th>
         </tr>
         <tr>
         	<th>followers</th>
-        	<th><%= user.followers.count %>人</th>
+        	<th><%= link_to followers_show_path(user.id) do %><%= user.followers.count %>人<% end %></th>
         </tr>
+
 		
 		
 </table>
