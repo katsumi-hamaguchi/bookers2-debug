@@ -34,6 +34,16 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
 
+  #検索機能
+  def User.search(sesarch,user_or_book)
+    if user_or_book == "1"
+       User.where(['name LIKE ?', "%#{search}%"])
+    else
+       User.all
+    end
+  end
+
+
 
 
   #バリデーションは該当するモデルに設定する。エラーにする条件を設定できる。

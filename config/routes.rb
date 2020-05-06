@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'users/followers/:id' => 'users#followers',as:"followers_show"
 
 #検索機能
-  get 'search' => 'search#search',as:'search_show'
+  get 'search' => 'search#search',as:'search'
 
 
 end
