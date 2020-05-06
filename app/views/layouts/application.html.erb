@@ -34,8 +34,17 @@
           </ul>
         </nav>
 
+
       </div>
+      
     </header>
+     <!--検索フォーム-->
+      <%= form_tag(search_show_path,:method => 'get') do %>
+         
+  　　　<%= text_field_tag :search %>
+        <%= select_tag(:option, options_for_select([["user", "1"],["book","2"]]))%> 
+  　　　<%= submit_tag 'Search' %>
+　　　<% end %>
     <!--ヘッダーの記述-->
     <div class="container">
       <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
