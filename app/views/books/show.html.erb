@@ -45,27 +45,10 @@
 					</tr>
 			</table>
 
-			<%= form_for([@book, @book_comment] ) do |f| %>
-			  <%= f.text_area :comment %>
-			  <%= f.submit "送信" %>
-			<% end %>
 
-              <h2>コメント一覧</h2>
-            <% @book.book_comments.each do |book_comment| %>
-              name:<%= book_comment.user.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              day:<%= book_comment.created_at.strftime('%Y/%m/%d') %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-              comment:<%= book_comment.comment %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            　<% unless current_user != book_comment.user %>
-              <%= link_to "削除",  book_book_comment_path(@book.id,book_comment.id), method: :delete %>
-               
-            
-
-               <% end %>
-             <br>
-            <% end %>
+              
+            <td class="comments"><%= render 'books/comment', book_comments: @book.book_comments %></td>
+            <td class="comment_form"><%= render 'books/comment_book', book: @book, book_comments: @book %></td>
 
 				  		
 
