@@ -4,6 +4,8 @@ class BookCommentsController < ApplicationController
 	    @book_comment = BookComment.new(post_comment_params)
 	    @book_comment.user_id = current_user.id
 	    @book_comment.book_id = @book.id
+       
+
 	    if @book_comment.save
 	       flash[:success] = "Comment was successfully created."
 
@@ -20,6 +22,8 @@ class BookCommentsController < ApplicationController
 
 		@book_comment = BookComment.find(params[:id])
 		##@book = @book_comment.book
+		@book = @book_comment.book #追加
+
 		@book_comment.destroy
 		
 	    

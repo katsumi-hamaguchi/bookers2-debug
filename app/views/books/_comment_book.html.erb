@@ -1,5 +1,5 @@
 <h3>コメント入力</h3>
-<%= form_with(model: [@book, @book_comment], local: false ) do |f| %>
+<%= form_with(model: [@book, @book_comment], remote: true ) do |f| %>
 <%= f.text_area :comment %>
 <%= f.submit "送信" %>
 <% end %>

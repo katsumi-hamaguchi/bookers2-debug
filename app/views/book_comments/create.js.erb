@@ -1,4 +1,4 @@
-$('.comment_form').html("<%= j(render partial: 'books/comment_book', locals: {book_comments: @book_comment.book.book_comments}) %>");
 $("textarea").val('')
 
-$('.comment_buttons_<%= @book.id %>').html("<%= j(render partial: 'books/comment', locals: {book_comments: @book_comment.book.book_comments}) %>");
+$('.comments').html("<%= j(render partial: 'books/comment', locals: {book_comments: @book.book_comments}) %>");
+
