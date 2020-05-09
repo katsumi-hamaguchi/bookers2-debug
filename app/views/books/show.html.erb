@@ -47,8 +47,14 @@
 
 
               
-            <td class="comments"><%= render 'books/comment', book_comments: @book.book_comments %></td>
-            <td class="comment_form"><%= render 'books/comment_book', book: @book %></td>
+            <div class="comments"><%= render 'books/comment', book_comments: @book.book_comments %></div>
+            <!-- <td class="comment_form"><%= render 'books/comment_book', book: @book %></td> -->
+
+            <h3>コメント入力</h3>
+<%= form_with(model: [@book, @book_comment], remote: true ) do |f| %>
+<%= f.text_area :comment %>
+<%= f.submit "送信" %>
+<% end %>
 
            
 				  		
